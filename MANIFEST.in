@@ -1,0 +1,2 @@
+recursive-include what.fm/templates *
+recursive-include what.fm/static *
