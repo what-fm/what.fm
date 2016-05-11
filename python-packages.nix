@@ -1,4 +1,14 @@
 {
+  Flask = super.buildPythonPackage {
+    name = "Flask-0.10.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [Werkzeug Jinja2 itsdangerous];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/db/9c/149ba60c47d107f85fe52564133348458f093dd5e6b57a5b60ab9ac517bb/Flask-0.10.1.tar.gz";
+      md5 = "378670fe456957eb3c27ddaef60b2b24";
+    };
+  };
   Jinja2 = super.buildPythonPackage {
     name = "Jinja2-2.8";
     buildInputs = with self; [];
@@ -29,16 +39,6 @@
       md5 = "e4dbeb6302ce74babc0d7c21fc3d8291";
     };
   };
-  flask = super.buildPythonPackage {
-    name = "flask-0.10.1";
-    buildInputs = with self; [];
-    doCheck = false;
-    propagatedBuildInputs = with self; [Werkzeug Jinja2 itsdangerous];
-    src = fetchurl {
-      url = "https://pypi.python.org/packages/db/9c/149ba60c47d107f85fe52564133348458f093dd5e6b57a5b60ab9ac517bb/Flask-0.10.1.tar.gz";
-      md5 = "378670fe456957eb3c27ddaef60b2b24";
-    };
-  };
   itsdangerous = super.buildPythonPackage {
     name = "itsdangerous-0.24";
     buildInputs = with self; [];
@@ -48,6 +48,13 @@
       url = "https://pypi.python.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz";
       md5 = "a3d55aa79369aef5345c036a8a26307f";
     };
+  };
+  what.fm = super.buildPythonPackage {
+    name = "what.fm-0.0.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [Flask];
+    src = ./.;
   };
 
 ### Test requirements

@@ -14,10 +14,4 @@ let basePythonPackages = pkgs.python34Packages;
     } ./python-packages.nix)
     // { inherit (basePythonPackages) pip; };
 
-in myPythonPackages.buildPythonPackage {
-  name = "what.fm";
-  version = "0.0.1";
-  buildInputs = with myPythonPackages; [
-    flask
-  ];
-}
+in myPythonPackages.what.fm
