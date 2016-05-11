@@ -1,5 +1,9 @@
 # What.FM, a last.fm with blackjack and hookers
 
+[![Build Status](https://travis-ci.org/what-fm/what.fm.svg?branch=master)](https://travis-ci.org/what-fm/what.fm)
+[![Issue Stats](http://www.issuestats.com/github/what-fm/what.fm/badge/pr?style=flat)](http://www.issuestats.com/github/what-fm/what.fm)
+[![Issue Stats](http://www.issuestats.com/github/what-fm/what.fm/badge/issue?style=flat)](http://www.issuestats.com/github/what-fm/what.fm)
+
 Last.fm sucks, so we're building a new, better one.
 
 ### Project goals: Make last.fm great again
