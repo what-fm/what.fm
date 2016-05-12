@@ -3,15 +3,15 @@
 , supportedPythons ? [ "32" "33" "34" "35" ]
 }:
 
-let inherit ((import <nixpkgs> {})) pkgs;
-    inherit (pkgs.lib) genAttrs;
+let myPkgs = import <nixpkgs> {};
+    inherit (myPkgs.lib) genAttrs;
 
 in rec {
-  tarball = pkgs.releaseTools.sourceTarball rec {
+  tarball = myPkgs.releaseTools.sourceTarball rec {
     name = "what.fm";
     version = "0.0.1";
     inherit src;
-    buildInputs = [ pkgs.git ];
+    buildInputs = [ myPkgs.git ];
 
     postUnpack = ''
       # Clean up when building from a working tree.
