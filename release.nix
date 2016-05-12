@@ -33,7 +33,7 @@ in rec {
 
       pkgs.callPackage ./. {
         basePythonPackages = pkgs."${py}Packages";
-        src = "${tarball}/tarballs/*.tar.bz2";
+        srcRoot = "${tarball}/tarballs/*.tar.bz2";
       }
     )
   );

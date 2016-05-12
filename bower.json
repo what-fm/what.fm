@@ -1,0 +1,16 @@
+{
+  "name": "what.fm",
+  "version": "0.0.1",
+  "authors": [
+    "Jude Taylor <me@jude.bio>"
+  ],
+  "main": "what.py",
+  "keywords": [
+    "music"
+  ],
+  "homepage": "https://github.com/what-fm/what.fm",
+  "dependencies": {
+    "foundation-sites": "6.*",
+    "font-awesome": "4.*"
+  }
+}
