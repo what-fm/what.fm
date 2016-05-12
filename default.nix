@@ -1,13 +1,14 @@
-{ stdenv, pkgs }:
+{ stdenv, pkgs, basePythonPackages ? pkgs.python34Packages
+, src ? ./.
+}:
 
 with stdenv.lib;
 
-let basePythonPackages = pkgs.python34Packages;
-
-    localOverrides = pythonPackages: {
+let localOverrides = pythonPackages: {
       what.fm = pythonPackages.what.fm.override (attrs: {
         buildInputs = optional inNixShell basePythonPackages.flake8
           ++ attrs.buildInputs;
+        inherit src;
       });
     };
 
