@@ -1,5 +1,5 @@
 { src ? ./.
-, supportedSystems ? [ "x86_64-linux" "x86_64-darwin" ]
+, supportedSystems ? [ "x86_64-linux" "i686-linux" ]
 , supportedPythons ? [ "32" "33" "34" "35" ]
 }:
 
