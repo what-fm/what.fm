@@ -1,12 +1,22 @@
 {
   Flask = super.buildPythonPackage {
-    name = "Flask-0.10.1";
+    name = "Flask-0.11.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [Werkzeug Jinja2 itsdangerous];
+    propagatedBuildInputs = with self; [Werkzeug Jinja2 itsdangerous click];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/db/9c/149ba60c47d107f85fe52564133348458f093dd5e6b57a5b60ab9ac517bb/Flask-0.10.1.tar.gz";
-      md5 = "378670fe456957eb3c27ddaef60b2b24";
+      url = "https://pypi.python.org/packages/55/8a/78e165d30f0c8bb5d57c429a30ee5749825ed461ad6c959688872643ffb3/Flask-0.11.1.tar.gz";
+      md5 = "d2af95d8fe79cf7da099f062dd122a08";
+    };
+  };
+  Flask-Bower = super.buildPythonPackage {
+    name = "Flask-Bower-1.2.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [Flask];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/a4/8b/8759e631e50a6544a3351528b5bc12636c166e418c39c3a72a8d630e85d1/Flask-Bower-1.2.1.tar.gz";
+      md5 = "91fa024f89af4adb5c67798efcf44428";
     };
   };
   Jinja2 = super.buildPythonPackage {
@@ -30,13 +40,23 @@
     };
   };
   Werkzeug = super.buildPythonPackage {
-    name = "Werkzeug-0.11.9";
+    name = "Werkzeug-0.11.10";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/0f/7c/b316cd9779817173e93f5cebc8fb387db33cc8dc526f3db5e61f2c008d5b/Werkzeug-0.11.9.tar.gz";
-      md5 = "e4dbeb6302ce74babc0d7c21fc3d8291";
+      url = "https://pypi.python.org/packages/b7/7f/44d3cfe5a12ba002b253f6985a4477edfa66da53787a2a838a40f6415263/Werkzeug-0.11.10.tar.gz";
+      md5 = "780967186f9157e88f2bfbfa6f07a893";
+    };
+  };
+  click = super.buildPythonPackage {
+    name = "click-6.6";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/7a/00/c14926d8232b36b08218067bcd5853caefb4737cda3f0a47437151344792/click-6.6.tar.gz";
+      md5 = "d0b09582123605220ad6977175f3e51d";
     };
   };
   itsdangerous = super.buildPythonPackage {
@@ -53,7 +73,7 @@
     name = "what.fm-0.0.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [Flask];
+    propagatedBuildInputs = with self; [Flask Flask-Bower];
     src = ./.;
   };
 

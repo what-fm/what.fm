@@ -28,10 +28,10 @@ let
     what.fm = pythonPackages.what.fm.override (attrs: {
       buildInputs = attrs.buildInputs ++ optionals inNixShell (devTools pythonPackages);
       postShellHook = ''
-        ln -sfv ${bowerComponents}/bower_components .
+        ln -sfv ${bowerComponents}/bower_components what/fm/
       '';
       preBuild = ''
-        cp --reflink=auto --no-preserve=mode -R ${bowerComponents}/bower_components .
+        cp --reflink=auto --no-preserve=mode -R ${bowerComponents}/bower_components what/fm/
       '';
       src = srcRoot;
     });
