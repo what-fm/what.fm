@@ -2,3 +2,4 @@
 *~
 result
 bower_components
+*.pyc
