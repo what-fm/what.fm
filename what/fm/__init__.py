@@ -1,11 +1,32 @@
+import os
+import flask_assets as assets
+
 from flask import Flask, render_template
 from flask_bower import Bower
 
 app = Flask(__name__)
+env = assets.Environment(app)
+
+env.load_path = [
+    os.path.join(os.path.dirname(__file__), 'sass'),
+    os.path.join(os.path.dirname(__file__), 'bower_components')
+    ]
+
+env.register(
+    'css_all',
+    assets.Bundle(
+        'foundation-sites/dist/foundation.min.css',
+        assets.Bundle(
+            'all.scss',
+            filters='scss',
+            output='css_all.css'
+            )
+        )
+    )
 
 
 @app.route("/")
-def hello():
+def home():
     return render_template('home.html')
 
 Bower(app)

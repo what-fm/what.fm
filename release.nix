@@ -16,7 +16,7 @@ in rec {
     postUnpack = ''
       # Clean up when building from a working tree.
       if [[ -d $sourceRoot/.git ]]; then
-        git -C $sourceRoot clean -fdx -e important-secret
+        git -C $sourceRoot clean -fdx
       fi
     '';
 

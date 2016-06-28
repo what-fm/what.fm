@@ -8,9 +8,11 @@ setup(
         zip_safe=False,
         install_requires=[
             'Flask',
-            'Flask-Bower'
+            'flask-assets',
+            'gunicorn'
             ],
         include_package_data=True,
+        scripts=['bin/unicorn'],
         entry_points={
             'console_scripts': [
                 'what.fm = what.fm.runserver:main'

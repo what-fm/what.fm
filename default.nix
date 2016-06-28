@@ -26,7 +26,9 @@ let
 
   localOverrides = pythonPackages: {
     what.fm = pythonPackages.what.fm.override (attrs: {
-      buildInputs = attrs.buildInputs ++ optionals inNixShell (devTools pythonPackages);
+      buildInputs = attrs.buildInputs
+        ++ optionals inNixShell (devTools pythonPackages)
+        ++ [ pkgs.sass ];
       postShellHook = ''
         ln -sfv ${bowerComponents}/bower_components what/fm/
       '';
@@ -34,6 +36,10 @@ let
         cp --reflink=auto --no-preserve=mode -R ${bowerComponents}/bower_components what/fm/
       '';
       src = srcRoot;
+      postFixup = ''
+        wrapPythonPrograms
+        wrapProgram $out/bin/unicorn --set PYTHONPATH "$PYTHONPATH" --set PATH "$PATH"
+      '';
     });
   };
 

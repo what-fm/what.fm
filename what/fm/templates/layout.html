@@ -1,8 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <head>
-    <link rel=stylesheet type=text/css href="{{ url_for('bower.static', filename='foundation-sites/dist/foundation.css') }}">
     <title>{% block title %}{% endblock %}</title>
+    {% assets "css_all" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+    {% endassets %}
 </head>
 <body>
-    {% block body %}{% endblock %}
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li><a href="{{ url_for('home') }}" id="home-link">🎵 what.fm</a></li>
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
 </body>
+</html>

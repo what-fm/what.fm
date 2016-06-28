@@ -59,6 +59,26 @@
       md5 = "d0b09582123605220ad6977175f3e51d";
     };
   };
+  flask-assets = super.buildPythonPackage {
+    name = "flask-assets-0.11";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [Flask webassets];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/61/92/2e17b5fda9535c2af6444c5794a85d12941b4955b27ea8f46d3ce9c58e0a/Flask-Assets-0.11.tar.gz";
+      md5 = "d7fa762f704ab5eb62e6801d43ce2300";
+    };
+  };
+  gunicorn = super.buildPythonPackage {
+    name = "gunicorn-19.6.0";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/84/ce/7ea5396efad1cef682bbc4068e72a0276341d9d9d0f501da609fab9fcb80/gunicorn-19.6.0.tar.gz";
+      md5 = "338e5e8a83ea0f0625f768dba4597530";
+    };
+  };
   itsdangerous = super.buildPythonPackage {
     name = "itsdangerous-0.24";
     buildInputs = with self; [];
@@ -69,11 +89,21 @@
       md5 = "a3d55aa79369aef5345c036a8a26307f";
     };
   };
+  webassets = super.buildPythonPackage {
+    name = "webassets-0.11.1";
+    buildInputs = with self; [];
+    doCheck = false;
+    propagatedBuildInputs = with self; [];
+    src = fetchurl {
+      url = "https://pypi.python.org/packages/0e/97/f0cd013a3ae074672e9fdfa8629e4071b5cc420a2c82bef5622a87631d1c/webassets-0.11.1.tar.gz";
+      md5 = "6acca51bd12fbdc0399ab1a9b67a1599";
+    };
+  };
   what.fm = super.buildPythonPackage {
     name = "what.fm-0.0.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [Flask Flask-Bower];
+    propagatedBuildInputs = with self; [Flask Flask-Bower flask-assets gunicorn];
     src = ./.;
   };
 
