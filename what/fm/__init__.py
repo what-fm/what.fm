@@ -3,7 +3,6 @@ import flask_assets as assets
 from webassets.filter import get_filter
 
 from flask import Flask, render_template
-from flask_bower import Bower
 
 app = Flask(__name__)
 env = assets.Environment(app)
@@ -31,8 +30,6 @@ env.register(
 @app.route("/")
 def home():
     return render_template('home.html')
-
-Bower(app)
 
 if __name__ == "__main__":
     app.run(debug=True)

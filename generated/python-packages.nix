@@ -9,14 +9,14 @@
       md5 = "d2af95d8fe79cf7da099f062dd122a08";
     };
   };
-  Flask-Bower = super.buildPythonPackage {
-    name = "Flask-Bower-1.2.1";
+  Flask-Script = super.buildPythonPackage {
+    name = "Flask-Script-2.0.5";
     buildInputs = with self; [];
     doCheck = false;
     propagatedBuildInputs = with self; [Flask];
     src = fetchurl {
-      url = "https://pypi.python.org/packages/a4/8b/8759e631e50a6544a3351528b5bc12636c166e418c39c3a72a8d630e85d1/Flask-Bower-1.2.1.tar.gz";
-      md5 = "91fa024f89af4adb5c67798efcf44428";
+      url = "https://pypi.python.org/packages/66/e9/2b3c7c548a6bad0b59da21e2050613da43aae4da617fb98847efa3e09a43/Flask-Script-2.0.5.tar.gz";
+      md5 = "e5c73d3b7937f5b88942f342f9617029";
     };
   };
   Jinja2 = super.buildPythonPackage {
@@ -103,7 +103,7 @@
     name = "what.fm-0.0.1";
     buildInputs = with self; [];
     doCheck = false;
-    propagatedBuildInputs = with self; [Flask Flask-Bower flask-assets gunicorn];
+    propagatedBuildInputs = with self; [Flask Flask-Script flask-assets gunicorn];
     src = ./.;
   };
 

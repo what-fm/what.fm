@@ -1,3 +1,4 @@
 recursive-include what/fm/templates *
 recursive-include what/fm/static *
 recursive-include what/fm/bower_components *
+recursive-include what/fm/scss *
