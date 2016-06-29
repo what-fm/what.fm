@@ -1,7 +1,11 @@
 @import 'settings';
 @import 'foundation';
 
-@include foundation-everything;
+@include foundation-global-styles; // Always include the global-styles
+@include foundation-grid;
+@include foundation-menu;
+@include foundation-typography;
+@include foundation-top-bar;
 
 .top-bar a {
     color: white;

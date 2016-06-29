@@ -28,6 +28,7 @@ let
     what.fm = pythonPackages.what.fm.override (attrs: {
       buildInputs = attrs.buildInputs
         ++ optionals inNixShell (devTools pythonPackages)
+        ++ optional stdenv.isLinux pkgs.glibcLocales
         ++ [ pkgs.sass ];
       postShellHook = ''
         ln -sfv ${bowerComponents}/bower_components what/fm/
@@ -36,6 +37,8 @@ let
         cp --reflink=auto --no-preserve=mode -R ${bowerComponents}/bower_components what/fm/
         ${basePythonPackages.python.interpreter} manage.py assets build
       '';
+      # for sass
+      LC_ALL = "en_US.UTF-8";
       src = srcRoot;
       postFixup = ''
         wrapPythonPrograms
