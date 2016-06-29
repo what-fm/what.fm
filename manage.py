@@ -1,4 +1,4 @@
-from flask.ext.script import Manager
+from flask_script import Manager
 from what.fm import app
 from flask_assets import ManageAssets
 

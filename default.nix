@@ -34,6 +34,7 @@ let
       '';
       preBuild = ''
         cp --reflink=auto --no-preserve=mode -R ${bowerComponents}/bower_components what/fm/
+        ${basePythonPackages.python.interpreter} manage.py assets build
       '';
       src = srcRoot;
       postFixup = ''
