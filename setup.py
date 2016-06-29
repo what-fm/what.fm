@@ -13,10 +13,10 @@ setup(
             'gunicorn'
             ],
         include_package_data=True,
-        scripts=['bin/unicorn'],
         entry_points={
             'console_scripts': [
-                'what.fm = what.fm.runserver:main'
+                'what.fm = what.fm.runserver:main',
+                'unicorn = gunicorn.app.wsgiapp:run'
                 ]
             }
         )
